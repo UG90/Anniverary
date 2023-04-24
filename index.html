@@ -60,5 +60,29 @@
     </audio>
     <p>We hope you enjoy this slideshow of memories on your special day. Happy Anniversary!</p>
   </main>
+  <script>
+  // Get all the images in the slideshow
+  const images = document.querySelectorAll('#slideshow img');
+  // Set the index of the currently active image
+  let currentIndex = 0;
+
+  // Function to change the active image
+  function changeImage() {
+    // Hide the current active image
+    images[currentIndex].classList.remove('active');
+    // Increment the index
+    currentIndex++;
+    // If the index is greater than the number of images, reset it to 0
+    if (currentIndex >= images.length) {
+      currentIndex = 0;
+    }
+    // Show the new active image
+    images[currentIndex].classList.add('active');
+  }
+
+  // Set an interval to call the changeImage function every 5 seconds
+  setInterval(changeImage, 5000);
+</script>
+
 </body>
 </html>
