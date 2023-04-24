@@ -24,17 +24,6 @@
     #slideshow img.active {
       opacity: 1;
     }
-
-    /* Hide audio controls */
-    audio::-webkit-media-controls {
-      display:none !important;
-    }
-    audio::-webkit-media-controls-enclosure {
-      display:none !important;
-    }
-    audio::-webkit-media-controls-volume-slider {
-      display:none !important;
-    }
   </style>
 </head>
 <body>
@@ -54,7 +43,7 @@
       <img src="grandparents8.jpg">
       <img src="grandparents9.jpg">
     </div>
-    <audio id="audio-player" controls autoplay>
+    <audio id="audio-player" controls>
       <source src="videoplayback.mp4" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
