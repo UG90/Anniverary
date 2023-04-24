@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grandparent's Anniversary Slideshow with Song and Decorations</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+  <style>
+    /* Slideshow styles */
+    #slideshow {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      overflow: hidden;
+    }
+    #slideshow img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    #slideshow img.active {
+      opacity: 1;
+    }
+    
+    /* Decoration styles */
+    .heart {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: red;
+      transform: rotate(45deg);
+      animation: heart-beat 0.5s ease-in-out infinite alternate;
+    }
+    @keyframes heart-beat {
+      from { transform: scale(1); }
+      to { transform: scale(1.2); }
+    }
+    .balloon {
+      position: absolute;
+      width: 50px;
+      height: 80px;
+      background-color: pink;
+      border-radius: 50% 50% 0 50%;
+      transform: skew(30deg);
+      animation: balloon-float 1s ease-in-out infinite alternate;
+    }
+    @keyframes balloon-float {
+      from { transform: translateY(0); }
+      to { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Happy Anniversary, Grandparents!</h1>
+  </header>
+  <main>
+    <h2>Our Slideshow and Song for You</h2>
+    <div id="slideshow">
+      <img src="grandparents1.jpg" class="active">
+      <img src="grandparents2.jpg">
+      <img src="grandparents3.jpg">
+    </div>
+    <p>We hope you enjoy this slideshow of memories on your special day. Happy Anniversary!</p>
+    <audio id="audio-player" controls>
+      <source src="happy-anniversary-song.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <!-- Decorations -->
+    <div class="heart" style="top: 100px; left: 50px;"></div>
+    <div class="heart" style="top: 150px; left: 200px;"></div>
+    <div class="heart" style="top: 200px; left: 350px;"></div>
+    <div class="balloon" style="top: 50px; right: 50px;"></div>
+    <div class="balloon" style="top: 200px; right: 150px;"></div>
+    <div class="balloon" style="top: 350px; right: 250px;"></div>
+  </main>
+  <script>
+    $(document).ready(function() {
+      var audioPlayer = document.getElementById('audio-player');
+      audioPlayer.play();
+      setInterval(function() {
+        var active
