@@ -1,108 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Grandparent's Anniversary Surprise</title>
-	<style type="text/css">
-		body {
-			background-color: #f5f5f5;
-			font-family: Arial, sans-serif;
-			text-align: center;
-		}
-		h1 {
-			color: #ff69b4;
-		}
-		.container {
-			margin-top: 30px;
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-		}
-		.slide {
-			width: 400px;
-			height: 300px;
-			margin: 20px;
-			overflow: hidden;
-			position: relative;
-		}
-		.slide img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			position: absolute;
-			top: 0;
-			left: 0;
-			opacity: 0;
-			transition: opacity 1s ease-in-out;
-		}
-		.slide img.active {
-			opacity: 1;
-		}
-		.song {
-			margin-top: 20px;
-			font-size: 24px;
-			color: #ff69b4;
-		}
-		.balloon-container {
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			pointer-events: none;
-			z-index: -1;
-		}
-		.balloon {
-			position: absolute;
-			width: 50px;
-			height: 70px;
-			background-image: url('https://i.imgur.com/WmaRJ6b.png');
-			background-size: contain;
-			animation: float 10s ease-in-out infinite;
-		}
-		.balloon:nth-child(2n) {
-			background-image: url('https://i.imgur.com/uyz6seH.png');
-		}
-		@keyframes float {
-			0% {
-				transform: translate(0, 0);
-			}
-			50% {
-				transform: translate(0, -20px);
-			}
-			100% {
-				transform: translate(0, 0);
-			}
-		}
-	</style>
-	<script type="text/javascript">
-		window.onload = function() {
-			var slides = document.querySelectorAll('.slide');
-			var currentSlide = 0;
-			var slideInterval = setInterval(nextSlide, 5000);
-
-			function nextSlide() {
-				slides[currentSlide].className = 'slide';
-				currentSlide = (currentSlide + 1) % slides.length;
-				slides[currentSlide].className = 'slide active';
-			}
-
-			var audio = new Audio('https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_700KB.mp3');
-			audio.loop = true;
-			audio.play();
-
-			var balloonContainer = document.querySelector('.balloon-container');
-			for (var i = 0; i < 20; i++) {
-				var balloon = document.createElement('div');
-				balloon.className = 'balloon';
-				balloon.style.left = Math.random() * 100 + '%';
-				balloon.style.animationDelay = Math.random() * 10 + 's';
-				balloonContainer.appendChild(balloon);
-			}
-		}
-	</script>
+  <meta charset="UTF-8">
+  <title>Grandparent's Anniversary Celebration</title>
+  <style>
+    /* Slideshow styles */
+    #slideshow {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      overflow: hidden;
+    }
+    #slideshow img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    /* Balloon styles */
+    .balloon {
+      position: absolute;
+      animation-name: balloon-float;
+      animation-duration: 4s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+    }
+    .balloon-left {
+      left: 5%;
+      top: 20%;
+    }
+    .balloon-right {
+      right: 5%;
+      top: 20%;
+    }
+    @keyframes balloon-float {
+      0% {
+        transform: translate(0, 0);
+      }
+      50% {
+        transform: translate(0, -30px);
+      }
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+  </style>
 </head>
 <body>
-	<h1>Happy Anniversary Grandma and Grandpa!</h1>
-	<div class="container">
-		<div class="slide active">
-		
+  <div id="slideshow">
+    <img src="https://www.example.com/grandparents_anniversary.jpg" alt="Grandparents Anniversary">
+  </div>
+  <img class="balloon balloon-left" src="https://www.example.com/balloon.png" alt="Balloon">
+  <img class="balloon balloon-right" src="https://www.example.com/balloon.png" alt="Balloon">
+  <audio autoplay>
+    <source src="https://www.example.com/happy_anniversary.mp3" type="audio/mpeg">
+  </audio>
+</body>
+</html>
